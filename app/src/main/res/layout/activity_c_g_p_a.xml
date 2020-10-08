@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CGPA">
+
+    <TextView
+        android:id="@+id/CGPA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/galada"
+        android:text="CGPA"
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CGPA"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/galada"
+        android:text="For future semesters insert '0' in Σ(Ci x Gi) and credits registered"
+        android:textAlignment="center"
+        android:textColor="#F44336"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/Sem1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/galada"
+        android:text="Semester 1"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/Sem1ED"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@+id/Sem1"
+        android:fontFamily="@font/galada"
+        android:hint="Σ(Ci x Gi)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/CredSem1ED"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@+id/Sem1ED"
+        android:fontFamily="@font/galada"
+        android:hint="Credits Earned"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/WarSem1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem1ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem1"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/credWarSem1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CredSem1ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem1ED"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/subject"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem1"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/galada"
+        android:text="Semester 2"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/creditED"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/subject"
+        android:fontFamily="@font/galada"
+        android:hint="Σ(Ci x Gi)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/marksED"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/creditED"
+        android:fontFamily="@font/galada"
+        android:hint="Credits Earned"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/WarSem2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/creditED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/subject"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/credWarSem2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/marksED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/creditED"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/Sem3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/galada"
+        android:text="Semester 3"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/Sem3ED"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem3"
+        android:fontFamily="@font/galada"
+        android:hint="Σ(Ci x Gi)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/CredSem3ED"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem3ED"
+        android:fontFamily="@font/galada"
+        android:hint="Credits Earned"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/WarSem3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem3ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem3"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/credWarSem3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CredSem3ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem3ED"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/Sem4"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem3"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/galada"
+        android:text="Semester 4"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/Sem4ED"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem3"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem4"
+        android:fontFamily="@font/galada"
+        android:hint="Σ(Ci x Gi)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/CredSem4ED"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem3"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem4ED"
+        android:fontFamily="@font/galada"
+        android:hint="Credits Earned"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/WarSem4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem4ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem4"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/credWarSem4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CredSem4ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem4ED"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/Sem5"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem4"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/galada"
+        android:text="Semester 5"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/Sem5ED"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem4"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem5"
+        android:fontFamily="@font/galada"
+        android:hint="Σ(Ci x Gi)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/CredSem5ED"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem4"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem5ED"
+        android:fontFamily="@font/galada"
+        android:hint="Credits Earned"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/WarSem5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem5ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem5"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/credWarSem5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CredSem5ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem5ED"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/Sem6"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem5"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/galada"
+        android:text="Semester 6"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/Sem6ED"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem5"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem6"
+        android:fontFamily="@font/galada"
+        android:hint="Σ(Ci x Gi)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/CredSem6ED"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem5"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem6ED"
+        android:fontFamily="@font/galada"
+        android:hint="Credits Earned"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/WarSem6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem6ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem6"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/credWarSem6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CredSem6ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem6ED"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/Sem7"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem6"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/galada"
+        android:text="Semester 7"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/Sem7ED"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem6"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem7"
+        android:fontFamily="@font/galada"
+        android:hint="Σ(Ci x Gi)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/CredSem7ED"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem6"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem6ED"
+        android:fontFamily="@font/galada"
+        android:hint="Credits Earned"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/WarSem7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem7ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem7"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/credWarSem7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CredSem7ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem7ED"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/Sem8"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem7"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/galada"
+        android:text="Semester 8"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/Sem8ED"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem7"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem8"
+        android:fontFamily="@font/galada"
+        android:hint="Σ(Ci x Gi)"
+        android:inputType="numberDecimal"
+        android:nextFocusDown="@id/CredSem1ED" />
+
+    <EditText
+        android:id="@+id/CredSem8ED"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem7"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/Sem8ED"
+        android:fontFamily="@font/galada"
+        android:hint="Credits Earned"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/WarSem8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem8ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem8"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/credWarSem8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CredSem8ED"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-8dp"
+        android:layout_toEndOf="@+id/Sem8ED"
+        android:fontFamily="@font/galada"
+        android:text="Required"
+        android:textColor="#F44336"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/CalcBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Sem8"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="40dp"
+        android:text="Calculate"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/ResultTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CalcBtn"
+        android:fontFamily="@font/galada"
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
+</RelativeLayout>

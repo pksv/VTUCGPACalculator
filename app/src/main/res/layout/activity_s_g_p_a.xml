@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SGPA">
+
+    <RelativeLayout
+        android:id="@+id/intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/galada"
+            android:text="SGPA"
+            android:textAlignment="center"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/totalSubjects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/galada"
+            android:text="Total Subjects"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/totalSubjects"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalSubjects"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/galada"
+            android:text="For total subjects less than 8, insert 'O' for subject credit and marks obtained"
+            android:textAlignment="center"
+            android:textColor="#F44336"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/subjectsSV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/calcRL"
+        android:layout_below="@+id/intro">
+
+        <RelativeLayout
+            android:id="@+id/rlSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/sub1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/credSub1ED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Subject 1"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/credSub1ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/sub1"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/marks1ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSub1ED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/warCred1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub1ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/sub1"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarks1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks1ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSub1ED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sub2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub1"
+                android:layout_alignBaseline="@id/credSub2ED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Subject 2"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/credSub2ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub1ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/sub2"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/marks2ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks1ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSub1ED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/warCred2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub2ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/sub2"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarks2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks2ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSub2ED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sub3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub2"
+                android:layout_alignBaseline="@id/credSub3ED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Subject 3"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/credSub3ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub2ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/sub3"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/marks3ED"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks2ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSub1ED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/warCred3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub3ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/sub3"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarks3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks3ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSub3ED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sub4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub3"
+                android:layout_alignBaseline="@id/credSub4ED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Subject 4"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/credSub4ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub3ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/sub4"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/marks4ED"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks3ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSub4ED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/warCred4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub4ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/sub4"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarks4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks4ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSub4ED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sub5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub4"
+                android:layout_alignBaseline="@id/credSub5ED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Subject 5"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/credSub5ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub4ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/sub5"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/marks5ED"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks4ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSub5ED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/warCred5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub5ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/sub5"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarks5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks5ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSub5ED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sub6"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub5"
+                android:layout_alignBaseline="@id/credSub6ED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Subject 6"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/credSub6ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub5ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/sub6"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/marks6ED"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks5ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSub6ED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/warCred6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub6ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/sub6"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarks6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks6ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSub6ED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sub7"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub6"
+                android:layout_alignBaseline="@id/credSub7ED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Subject 7"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/credSub7ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub6ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/sub7"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/marks7ED"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks6ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSub7ED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/warCred7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub7ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/sub7"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarks7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks7ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSub7ED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sub8"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub7"
+                android:layout_alignBaseline="@id/credSub8ED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Subject 8"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/credSub8ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub7ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/sub8"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/marks8ED"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks7ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSub8ED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/warCred8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub8ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/sub8"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarks8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks8ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSub8ED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sub9"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub8"
+                android:layout_alignBaseline="@id/credSub9ED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Back Subject 1"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/credSub9ED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub8ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/sub9"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/marks9ED"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks8ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSub9ED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warCred9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub9ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/sub9"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarks9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks9ED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSub9ED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/subX"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sub9"
+                android:layout_alignBaseline="@id/credSubXED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Back Subject 2"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/credSubXED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSub9ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/subX"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/marksXED"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marks9ED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSubXED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warCredX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSubXED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/subX"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarksX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marksXED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSubXED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/subXI"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subX"
+                android:layout_alignBaseline="@id/credSubXIED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Back Subject 3"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/credSubXIED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSubXED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/subXI"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/marksXIED"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marksXED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSubXIED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warCredXI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSubXIED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/subXI"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarksXI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marksXIED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSubXIED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/subXII"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subXI"
+                android:layout_alignBaseline="@id/credSubXIIED"
+                android:layout_marginStart="25dp"
+                android:fontFamily="@font/galada"
+                android:text="Back Subject 4"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/credSubXIIED"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSubXIED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/subXII"
+                android:fontFamily="@font/galada"
+                android:hint="Subject Credits"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/marksXIIED"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marksXIED"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/credSubXIIED"
+                android:fontFamily="@font/galada"
+                android:hint="Marks Obtained"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warCredXII"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/credSubXIIED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/subXII"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/warMarksXII"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/marksXIIED"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toEndOf="@+id/credSubXIIED"
+                android:fontFamily="@font/galada"
+                android:text="Required"
+                android:textColor="#F44336"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/calcRL"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/CalcBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="70dp"
+            android:text="Calculate"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/CalcBtn"
+            android:fontFamily="@font/galada"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

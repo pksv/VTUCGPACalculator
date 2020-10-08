@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/almendra_bold_italic"
+        android:text="VTU CGPA/SGPA Calculator"
+        android:textColor="#03A9F4"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/cgpaBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="35dp"
+        android:text="Calculate CGPA"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/sgpaBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cgpaBtn"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:text="Calculate SGPA"
+        android:textColor="#FFFFFF" />
+
+
+</RelativeLayout>
